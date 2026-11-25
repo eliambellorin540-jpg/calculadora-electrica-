@@ -5,7 +5,7 @@ from C1_calculadora.calculos import calcular_circuito
 from C2_servicios.historial import cargar_historial, guardar_calculo
 from C2_servicios.reportes import exportar_a_csv
 from C2_servicios.logs import obtener_logger, RUTA_LOG
-from C3_Utilidades.generadores import leer_lineas_log 
+from C3_Utilidades.generadores import leer_lineas_log  
 
 logger = obtener_logger("app")
 
