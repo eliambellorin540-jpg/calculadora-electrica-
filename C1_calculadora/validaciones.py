@@ -44,7 +44,7 @@ def validar_seccion_transversal(texto):
     if not coincidencia:
         logger.warning(f"Sección transversal con formato inválido: '{texto}'")
         raise ValueError(
-            "Sección inválida. Usa formatos como: 2.5, 2,5, 2.5 mm2 o 2,5 mm²."
+            "-Sección inválida. Usa formatos como: 2.5, 2,5, 2.5 mm2 o 2,5 mm²."
         )
 
     numero_texto = coincidencia.group(1)
