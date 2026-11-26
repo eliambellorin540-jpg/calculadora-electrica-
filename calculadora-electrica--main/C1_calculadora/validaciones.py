@@ -35,17 +35,3 @@ def validar_seccion_transversal(texto):
     Formatos admitidos: '2.5', '2,5', '2.5 mm2', '2,5 mm²'.
     Formatos rechazados: letras sueltas, unidades distintas (cm, m), negativos.
     """
-    texto_limpio = str(texto).strip()
-    
-    # Patrón regex: número entero o decimal (con . o ,) y unidad opcional mm2 o mm²
-    patron = r"^(\d+(?:[.,]\d+)?)\s*(mm2|mm²)?$"
-    coincidencia = re.match(patron, texto_limpio, re.IGNORECASE)
-
-    if not coincidencia:
-        logger.warning(f"Sección transversal con formato inválido: '{texto}'")
-        raise ValueError(
-            "Sección inválida. Usa formatos como: 2.5, 2,5, 2.5 mm2 o 2,5 mm²."
-        )
-
-    numero_texto = coincidencia.group(1)
-    return validar_numero_positivo(numero_texto, "Sección transversal")
